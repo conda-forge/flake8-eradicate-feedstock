@@ -1,5 +1,5 @@
 {% set name = "flake8-eradicate" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flake8-eradicate-{{ version }}.tar.gz
-  sha256: fe7167226676823d50cf540532302a6f576c5a398c5260692571a05ef72c5f5b
+  sha256: f5917d6dbca352efcd10c15fdab9c55c48f0f26f6a8d47898b25d39101f170a8
 
 build:
   number: 0
