@@ -1,5 +1,5 @@
 {% set name = "flake8-eradicate" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 
 package:
@@ -8,12 +8,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flake8-eradicate-{{ version }}.tar.gz
-  sha256: f5917d6dbca352efcd10c15fdab9c55c48f0f26f6a8d47898b25d39101f170a8
+  sha256: acaa1b6839ff00d284b805c432fdfa6047262bd15a5504ec945797e87b4de1fa
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    # Removing pyproject.toml here due to pip bug
+    - {{ PYTHON }} -c "__import__('os').unlink('pyproject.toml')"
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
